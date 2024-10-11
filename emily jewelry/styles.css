@@ -1,0 +1,169 @@
+/* Estilos generales */
+body {
+    font-family: 'Baguette Script', cursive; /* Cambiar a la fuente Baguette Script */
+    font-size: 16px; /* Tamaño de fuente base */
+    color: #e0e0e0; /* Color del texto */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0; /* Eliminar relleno por defecto */
+    background-image: url('imágenes/1200x675.webp'); /* Imagen de fondo */
+    background-size: cover; /* Ajustar tamaño de imagen */
+    background-repeat: no-repeat; /* No repetir imagen */
+    background-attachment: fixed; /* Imagen de fondo fija */
+    background-position: center; /* Centrar la imagen de fondo */
+}
+
+/* Encabezado */
+header {
+    text-align: center; /* Centrar el texto */
+    margin: 20px 0; /* Márgenes en la parte superior e inferior */
+}
+
+h1 {
+    color: #fff; /* Color del texto */
+    font-size: 2.5rem; /* Aumentar tamaño de la fuente del título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+}
+
+/* Sección del filtro */
+#filtro {
+    display: flex;
+    flex-direction: column; /* Colocar en columna */
+    align-items: center; /* Centrar los elementos */
+    margin: 20px; /* Espacio alrededor */
+}
+
+label {
+    margin: 10px;
+    font-weight: bold;
+    color: #fff; /* Color de texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+}
+
+/* Estilo de los inputs */
+input[type="number"],
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #6800f0; /* Bordes morados */
+    margin: 5px; /* Espaciado alrededor */
+    width: 220px; /* Ancho del input */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para cambios de color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para los inputs */
+}
+
+/* Cambios en el borde al enfocar el input */
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #001aff; /* Color de borde al enfocar */
+    outline: none; /* Sin contorno */
+    box-shadow: 0 0 5px rgba(0, 26, 255, 0.5), 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para dar efecto de enfoque */
+}
+
+/* Sección de productos */
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+#catalogo div {
+    border: 2px solid #6800f0; /* Borde morado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px;
+    margin: 10px;
+    background-color: #3b3b3b; /* Color de fondo oscuro */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+    width: 220px; /* Un poco más ancho */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave para hover */
+    opacity: 0; /* Para la animación de entrada */
+    transform: translateY(20px); /* Para la animación de entrada */
+    animation: fadeIn 0.5s forwards; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#catalogo div:hover {
+    transform: scale(1.05); /* Aumentar ligeramente al pasar el mouse */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Sombra más intensa al hacer hover */
+}
+
+/* Botones */
+button {
+    background-color: #6800f0; /* Color morado */
+    color: white; /* Color de texto */
+    border: 2px solid black; /* Contorno negro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 15px; /* Relleno */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave para el fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+}
+
+button:hover {
+    background-color: #a040ff; /* Color más claro al hacer hover */
+    transform: scale(1.05); /* Aumentar al pasar el mouse */
+}
+
+/* Sección del carrito */
+#carrito {
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid #6800f0; /* Borde morado */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #2c2c2c; /* Fondo oscuro */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    white-space: nowrap; /* Evitar que los productos se envuelvan */
+}
+
+/* Productos en el carrito */
+#listaCarrito {
+    display: inline-block; /* Hacer que la lista de productos esté en línea */
+}
+
+#listaCarrito .producto {
+    display: inline-block; /* Hacer que cada producto esté en línea */
+    margin-right: 10px; /* Espaciado entre productos */
+    border: 1px solid #6800f0; /* Borde morado */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Relleno */
+    background-color: #0059ff; /* Color de fondo para productos en el carrito */
+}
+
+/* Estilo del modal */
+#modal {
+    position: fixed; /* Fijo en la pantalla */
+    top: 50%; /* Centro vertical */
+    left: 50%; /* Centro horizontal */
+    transform: translate(-50%, -50%); /* Centrar */
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border: 2px solid #6800f0; /* Borde morado */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Relleno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    width: 400px; /* Ancho fijo para el modal */
+}
+
+#modal img {
+    max-width: 100%; /* Imagen responsiva */
+    height: auto; /* Mantener proporción */
+}
+
+#cerrarModal {
+    font-size: 24px; /* Tamaño del icono de cerrar */
+    color: #aaa; /* Color del icono */
+    float: right; /* Alinear a la derecha */
+}
+
+#cerrarModal:hover {
+    color: #fff; /* Cambiar color al pasar el mouse */
+}
